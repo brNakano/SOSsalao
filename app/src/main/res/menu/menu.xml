@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_baseline_refresh_24"
+        android:title="Atualizar"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_config"
+        android:icon="@drawable/ic_baseline_handyman_24"
+        android:title="Ajustes"
+        app:showAsAction="never" />s
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_outline_search_24"
+        android:title="Pesquisar"
+        android:inputType="text"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="Sair"
+        app:showAsAction="never" />
+
+
+
+</menu>

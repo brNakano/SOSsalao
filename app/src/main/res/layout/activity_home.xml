@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".HomeActivity">
+
+    <!-- Nested ScrollView-->
+    <!-- Bottom appbar-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp">
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@android:color/holo_purple"
+        app:fabAlignmentMode="center"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- Bottom Search-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        android:outlineProvider="@color/purple_500"
+        app:backgroundTint="#FFC400"
+        app:tint="@color/purple_700"
+        app:pressedTranslationZ="10dp"
+        app:maxImageSize="35dp"
+        app:fabCustomSize="70dp"
+        app:layout_anchor="@id/bottom_home" />
+    <!-- Bottom Menu-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
