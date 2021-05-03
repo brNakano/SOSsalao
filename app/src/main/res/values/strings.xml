@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SOSsalao</string>
+    <string name="forget_password"><b>Esqueceu as senha?</b></string>
+    <string name="info_password">Insira seu nome de usuário e enviaremos um link para redefinir a senha.</string>
+    <string name="info_code_recovery">Isira o código enviado no e-mail</string>
+    <string name="info_change_password">Digite sua nova senha</string>
 </resources>

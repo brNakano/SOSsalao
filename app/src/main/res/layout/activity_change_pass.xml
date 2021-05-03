@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:theme="@style/SOSsalao.Login">
+
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="98dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/loginLogoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/loginLogo"
+        android:text="SOSsalão"
+        android:fontFamily="@font/roboto_bold"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="#272727"
+        />
+
+    <TextView
+        android:id="@+id/text_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/loginLogoName"
+        android:text="@string/info_change_password"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#B9272727"
+        android:textSize="15sp"
+        android:fontFamily="@font/roboto_regular"
+        android:backgroundTint="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/login_yield"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="15dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="#B9272727"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginLogoName"
+        />
+
+    <EditText
+        android:id="@+id/conf_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_yield"
+        android:hint="Confirme a senha"
+        android:inputType="textPassword"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="15dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="#B9272727"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        />
+
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/conf_password"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:text="Confirme"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="20dp"
+        app:background="@drawable/login_btn"
+        app:backgroundTint="@color/blue"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
