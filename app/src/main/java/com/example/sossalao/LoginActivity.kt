@@ -26,31 +26,29 @@ class LoginActivity : AppCompatActivity() {
             }
             false
         })
-
         loginBtn.setOnClickListener {onClickLogin() }
         change_password.setOnClickListener { onChangePassword() }
     }
 
     private fun onClickLogin(){
         val intent = Intent(this, HomeActivity::class.java)
-
-        if (loginAuthenticator()){
-            Toast.makeText(this, "Bem vindo", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
-        } else {
-            Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show()
+        val login = username.text.toString()
+        val password = password.text.toString()
+        if (login.length > 3 && password.length > 3) {
+            val getToken = loginAuthenticator(login, password)
+            if (getToken.length > 500) {
+                Toast.makeText(this, "Bem-vindo", Toast.LENGTH_SHORT).show()
+                intent.putExtra("tokenAuth", getToken);
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(this, "Necessario inserir username e senha!", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun loginAuthenticator():Boolean {
-        val login = username.text.toString()
-        val password = password.text.toString()
-        val getToken = Authlogin(login, password)
-        if (getToken.length > 500)
-            return true
-        return false
-    }
-    fun Authlogin(userName: String, password: String): String {
+    fun loginAuthenticator(userName: String, password: String?): String {
         val serverURL: String = "http://3.227.244.203:32768/api/auth"
         val url = URL(serverURL)
         var token = ""
