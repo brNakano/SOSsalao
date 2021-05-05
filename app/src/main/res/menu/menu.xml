@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent">
+
+
+    <item
+        android:id="@+id/menu_toggle"
+        android:icon="@drawable/ic_baseline_menu_24"
+        android:title="menu"
+        app:showAsAction="ifRoom"
+        android:layoutDirection="rtl"
+        />
 
     <item
         android:id="@+id/action_refresh"
         android:icon="@drawable/ic_baseline_refresh_24"
         android:title="Atualizar"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
+
+
     <item
         android:id="@+id/action_config"
         android:icon="@drawable/ic_baseline_handyman_24"
         android:title="Ajustes"
-        app:showAsAction="never" />s
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_outline_search_24"
@@ -23,6 +35,8 @@
         android:icon="@drawable/ic_baseline_login_24"
         android:title="Sair"
         app:showAsAction="never" />
+
+
 
 
 

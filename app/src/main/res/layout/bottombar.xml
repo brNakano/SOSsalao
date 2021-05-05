@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    app:contentInsetStart="0dp"
+    app:contentInsetEnd="0dp"
+    android:id="@+id/toolbar">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+
+        <!-- Nested ScrollView-->
+        <!-- Bottom appbar-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            app:layout_anchor="@+id/progressBar"
+            app:layout_anchorGravity="start|center">
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@android:color/holo_purple"
+            app:fabAlignmentMode="center"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:menu="@menu/menu"/>
+        <!-- Bottom Search-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:outlineProvider="@color/purple_500"
+            app:backgroundTint="#FFC400"
+            app:fabCustomSize="70dp"
+            app:layout_anchor="@id/bottom_home"
+            app:maxImageSize="35dp"
+            app:pressedTranslationZ="10dp"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            app:tint="@color/purple_700" />
+        <!-- Bottom Menu-->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.appcompat.widget.Toolbar>
+
+
