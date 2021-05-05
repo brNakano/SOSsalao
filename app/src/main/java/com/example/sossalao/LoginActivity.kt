@@ -1,21 +1,27 @@
 package com.example.sossalao
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import org.json.JSONObject
+import java.io.*
+import java.net.HttpURLConnection
+import java.net.URL
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         // Ao clicar enter com o cursor no editText da senha executa o login
-        password.setOnKeyListener(View.OnKeyListener{ v, keyCode, event ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP){
+        password.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 onClickLogin()
             }
             false
@@ -39,11 +45,43 @@ class LoginActivity : AppCompatActivity() {
     private fun loginAuthenticator():Boolean {
         val login = username.text.toString()
         val password = password.text.toString()
-
-        if (login == "aluno" && password == "impacta")
+        val getToken = Authlogin(login, password)
+        if (getToken.length > 500)
             return true
         return false
-
+    }
+    fun Authlogin(userName: String, password: String): String {
+        val serverURL: String = "http://3.227.244.203:32768/api/auth"
+        val url = URL(serverURL)
+        var token = ""
+        val connection = url.openConnection() as HttpURLConnection
+        connection.requestMethod = "POST"
+        connection.connectTimeout = 300000
+        connection.connectTimeout = 300000
+        connection.doOutput = true
+        val postData = "{\"user\": \"$userName\",\"password\": \"$password\"}";
+        connection.setRequestProperty("charset", "utf-8")
+        connection.setRequestProperty("Content-length", postData)
+        connection.setRequestProperty("Content-Type", "application/json")
+        try {
+            val outputStream: DataOutputStream = DataOutputStream(connection.outputStream)
+            outputStream.write(postData.toByteArray())
+            outputStream.flush()
+        } catch (exception: Exception) {
+            throw Exception("Exception while pushing authentication  ${exception.message}")
+        }
+        if (connection.responseCode == 200) {
+            val inputStream: DataInputStream = DataInputStream(connection.inputStream)
+            BufferedReader(InputStreamReader(inputStream)).use {
+                val response = StringBuffer()
+                val inputLine = it.readLine()
+                response.append(inputLine)
+                val obj = JSONObject(response.toString())
+                obj.getString("accessToken").also { token = it }
+            }
+            return token
+        }
+        return "Falha ao autenticar: "+connection.responseCode
     }
 
     private fun onChangePassword(){

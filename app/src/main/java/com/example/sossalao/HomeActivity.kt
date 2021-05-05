@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.action_search -> Toast.makeText(this@HomeActivity,"Deseja pesquisar algo?", Toast.LENGTH_SHORT).show()
                 R.id.action_config -> startActivity(Intent(this, SettingsActivity::class.java))
                 R.id.action_refresh -> loading()
-                R.id.action_logout -> startActivity(Intent(this, LoginActivity::class.java))
+                R.id.action_logout -> Runtime.getRuntime().exit(0)
             };   true
 
         }
