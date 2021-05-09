@@ -6,4 +6,8 @@
     <string name="info_change_password">Digite sua nova senha</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="lista_transacoes_adiciona" />
+    <string name="product_title">Titulo</string>
+    <string name="product_make">Marca</string>
+    <string name="product_description">Descrição</string>
 </resources>

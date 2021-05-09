@@ -12,4 +12,6 @@
     <color name="blue">#b4defd</color>
     <color name="gray">#8A8A8A</color>
     <color name="background">#fffeff</color>
+    <color name="receita">#607890</color>
+    <color name="despesa">#B22318</color>
 </resources>

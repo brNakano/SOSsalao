@@ -77,7 +77,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.products -> {
-                Toast.makeText(this, "Clicou Produtos", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ProductActivity::class.java))
             }
 
             R.id.procedure -> {
