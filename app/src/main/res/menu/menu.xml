@@ -11,7 +11,7 @@
         android:id="@+id/action_config"
         android:icon="@drawable/ic_baseline_handyman_24"
         android:title="Ajustes"
-        app:showAsAction="never" />s
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_outline_search_24"

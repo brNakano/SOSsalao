@@ -2,6 +2,19 @@
     <string name="app_name">SOSsalao</string>
     <string name="forget_password"><b>Esqueceu as senha?</b></string>
     <string name="info_password">Insira seu nome de usuário e enviaremos um link para redefinir a senha.</string>
-    <string name="info_code_recovery">Isira o código enviado no e-mail</string>
+    <string name="info_code_recovery">Insira o código enviado no e-mail</string>
     <string name="info_change_password">Digite sua nova senha</string>
+    <string name="info_register_user">preencha abaixo para criar um usuário.</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="navigation_drawer_open">OPEN</string>
+    <string name="navigation_drawer_close">CLOSE</string>
+
 </resources>

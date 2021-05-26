@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_diciplinas"
+            android:title="Disciplinas"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_forum"
+            android:title="Fórum" />
+        <item
+            android:id="@+id/nav_mensagens"
+            android:title="Mensagens" />
+        <item
+            android:id="@+id/nav_localizacao"
+            android:title="Localização" />
+        <item
+            android:id="@+id/nav_config"
+            android:title="Configurações" />
+    </group>
+</menu>
