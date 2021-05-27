@@ -1,89 +1,19 @@
 package com.example.sossalao
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_schedule.*
-import kotlinx.android.synthetic.main.lateral_menu_header.*
-import kotlinx.android.synthetic.main.lateral_menu_header.view.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-
-open class ScheduleActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    val context: Context get() = this
-
+class ScheduleActivity : InventoryActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
-        val it = intent
-        val token = it.getStringExtra("tokenAuth")
-        Log.i("Informacao: ", token.toString())
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Agenda"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        configuraMenuLateral()
-        mensagemInicial.text = "nada"
-
-
-    }
-/*    private fun loading(){
-        GlobalScope.launch(context = Dispatchers.Main) {
-            progressBar.visibility = View.VISIBLE
-            delay(10000)
-            progressBar.visibility = View.GONE
-        }
-    }*/
-
-    private fun configuraMenuLateral() {
-        // ícone de menu (hamburger) para mostrar o menu
-        var toogle = ActionBarDrawerToggle(this, drawerMenuLateral, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-
-        drawerMenuLateral.addDrawerListener(toogle)
-        toogle.syncState()
-
-        val header = lateral_menu.getHeaderView(0)
-        header.appHeaderTittle.text = "Agenda"
-
-        lateral_menu.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_schedule -> {
-                Toast.makeText(this, "Clicou Disciplinas", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.nav_people -> {
-                Toast.makeText(this, "Clicou Mensagens", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.nav_products -> {
-                startActivity(Intent(this, InventoryActivity::class.java))
-            }
-
-            R.id.nav_products -> {
-                Toast.makeText(this, "Clicou Localização", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.nav_config -> {
-                Toast.makeText(this, "Clicou Config", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_logout -> {
-                Toast.makeText(this, "Clicou Sair", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        drawerMenuLateral.closeDrawer(GravityCompat.START)
-        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -94,9 +24,7 @@ open class ScheduleActivity : AppCompatActivity(), NavigationView.OnNavigationIt
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        val id = item?.itemId
-
-        when (id) {
+        when (item?.itemId) {
             R.id.action_logout -> {
                 finish()
             }
@@ -113,4 +41,5 @@ open class ScheduleActivity : AppCompatActivity(), NavigationView.OnNavigationIt
 
         return super.onOptionsItemSelected(item)
     }
+
 }

@@ -3,8 +3,10 @@
     package="com.example.sossalao">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".SOSsalaoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOSsalao"
         android:usesCleartextTraffic="true">
-        <activity android:name=".InventoryActivity"></activity>
+        <activity
+            android:name=".ScheduleActivity"
+            android:theme="@style/SOSsalao.Home"></activity>
         <activity android:name=".RegisterLoginPeople" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity
-            android:name=".ScheduleActivity"
+            android:name=".InventoryActivity"
             android:label="@string/app_name"
             android:theme="@style/SOSsalao.Home">
             <intent-filter>

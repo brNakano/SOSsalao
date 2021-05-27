@@ -31,14 +31,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onClickLogin(){
-        val intent = Intent(this, ScheduleActivity::class.java)
+        val intent = Intent(this, InventoryActivity::class.java)
         val login = username.text.toString()
-        val password = password.text.toString()
-        if (login.length > 3 && password.length > 3) {
-            val getToken = loginAuthenticator(login, password)
+        val passwordCheck = password.text.toString()
+        if (login.length > 3 && passwordCheck.length > 3) {
+            val getToken = loginAuthenticator(login, passwordCheck)
             if (getToken.length > 500) {
+                // Limpar campos
+                username.setText("")
+                password.setText("")
+
                 Toast.makeText(this, "Bem-vindo", Toast.LENGTH_SHORT).show()
-                intent.putExtra("tokenAuth", getToken);
+                Prefs.setString("API_TOKEN", getToken)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show()

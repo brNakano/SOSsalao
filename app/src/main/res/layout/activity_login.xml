@@ -58,6 +58,7 @@
         android:inputType="textPassword"
         android:fontFamily="@font/roboto_regular"
         android:padding="15dp"
+        android:text=""
         android:textColor="@color/input_text"
         android:textColorHint="#B9272727"
         app:layout_constraintLeft_toLeftOf="parent"
