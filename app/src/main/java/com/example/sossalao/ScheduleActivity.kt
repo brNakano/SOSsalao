@@ -28,9 +28,7 @@ class ScheduleActivity : InventoryActivity() {
             R.id.action_logout -> {
                 finish()
             }
-            R.id.action_refresh -> {
-                Toast.makeText(context, "Botão de atualizar", Toast.LENGTH_LONG).show()
-            }
+
             R.id.action_config -> {
                 Toast.makeText(context, "Botão de configuracoes", Toast.LENGTH_LONG).show()
             }

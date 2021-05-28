@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.sossalao"
-        minSdkVersion 28
-        targetSdkVersion 30
+        minSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -46,8 +46,15 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
     implementation 'com.squareup.okhttp3:okhttp:3.8.0'
     testImplementation 'junit:junit:4.+'
+
+    implementation 'com.google.code.gson:gson:2.8.0'
+
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation group: 'com.android.support', name: 'design', version: '28.0.0'

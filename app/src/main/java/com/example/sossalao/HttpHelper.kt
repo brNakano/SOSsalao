@@ -27,7 +27,7 @@ object HttpHelper {
         return getJson(request)
     }
 
-    // POST JSON
+    // POST
     fun post(url: String, json: String, token: String): String {
         Log.d(TAG, "HttpHelper.post: $url > $json")
         val body = RequestBody.create(JSON, json)
@@ -53,7 +53,7 @@ object HttpHelper {
     }
 
 
-    // Lê resposta em formato JSON
+
     private fun getJson(request: Request?): String {
         val response = client.newCall(request).execute()
         val body = response.body()

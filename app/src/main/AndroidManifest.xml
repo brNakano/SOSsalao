@@ -14,22 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOSsalao"
         android:usesCleartextTraffic="true">
+        <activity android:name=".FormInventoryActivity"></activity>
+        <activity android:name=".ProductDetailActivity" />
         <activity
             android:name=".ScheduleActivity"
-            android:theme="@style/SOSsalao.Home"></activity>
+            android:theme="@style/SOSsalao.Home" />
         <activity android:name=".RegisterLoginPeople" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".InventoryActivity"
             android:label="@string/app_name"
-            android:theme="@style/SOSsalao.Home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/SOSsalao.Home"></activity>
         <activity
             android:name=".ChangePassActivity"
             android:theme="@style/SOSsalao.Login" />
@@ -42,7 +38,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/SOSsalao.Login"></activity>
+            android:theme="@style/SOSsalao.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

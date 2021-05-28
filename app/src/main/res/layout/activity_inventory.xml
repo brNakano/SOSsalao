@@ -19,6 +19,26 @@
 
         <include layout="@layout/toolbar"/>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="@android:color/transparent"
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -30,25 +50,6 @@
         app:headerLayout="@layout/lateral_menu_header"
         app:menu="@menu/lateral_menu"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:clickable="true">
-
-            <Button
-                android:fontFamily="@font/roboto_bold"
-                android:id="@+id/nav_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:text="Sair"
-                android:textColor="@color/black"
-                />
-        </LinearLayout>
-
 
 
     </com.google.android.material.navigation.NavigationView>
