@@ -57,7 +57,6 @@ open class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationI
     }
 
     fun onClickInventory(inventory: Inventory) {
-        Toast.makeText(context, "Clicou disciplina ${inventory.name}", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, ProductDetailActivity::class.java)
         intent.putExtra("inventory", inventory)
         startActivityForResult(intent, REQUEST_REMOVE)
@@ -131,7 +130,7 @@ open class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationI
                 finish()
             }
             R.id.action_add -> {
-                startActivity(Intent(this, LoginActivity::class.java))
+                startActivity(Intent(this, FormInventoryActivity::class.java))
             }
             R.id.action_config -> {
                 Toast.makeText(context, "Botão de configuracoes", Toast.LENGTH_LONG).show()

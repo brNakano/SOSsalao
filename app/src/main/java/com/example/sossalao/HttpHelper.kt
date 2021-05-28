@@ -16,11 +16,17 @@ object HttpHelper {
     var client = OkHttpClient()
 
     // GET
-    fun get(url:String, token: String): String {
+    fun get(url:String, token: String, type: String): String {
         Log.d(TAG, "HttpHelper.get: $url")
+        var headerValue = "Bearer $token"
+        if (type == "API"){
+            headerValue = "Bearer $token"
+        } else if (type == "FB"){
+            headerValue = "key=$token"
+        }
         val request = Request.Builder()
             .url(url)
-            .header("Authorization", "Bearer $token")
+            .header("Authorization", headerValue)
             .addHeader("Content-Type", "application/json")
             .get()
             .build()
@@ -28,13 +34,19 @@ object HttpHelper {
     }
 
     // POST
-    fun post(url: String, json: String, token: String): String {
+    fun post(url: String, json: String, token: String,type: String): String {
+        var headerValue = "Bearer $token"
+        if (type == "API"){
+            headerValue = "Bearer $token"
+        } else if (type == "FB"){
+            headerValue = "key=$token"
+        }
         Log.d(TAG, "HttpHelper.post: $url > $json")
         val body = RequestBody.create(JSON, json)
         val request = Request.Builder()
             .url(url)
             .post(body)
-            .header("Authorization", "Bearer $token")
+            .header("Authorization", headerValue)
             .addHeader("Content-Type", "application/json")
             .build()
         return getJson(request)

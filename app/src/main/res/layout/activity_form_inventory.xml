@@ -4,6 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/SOSsalao.Home"
     tools:context=".FormInventoryActivity">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <EditText
+        android:id="@+id/form_product_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/login_yield"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Nome"
+        android:padding="15dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="#B9272727"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/form_product_make"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_yield"
+        android:hint="Marca"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="15dp"
+        android:text=""
+        android:textColor="@color/input_text"
+        android:textColorHint="#B9272727"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_product_name"
+        />
+
+    <EditText
+        android:id="@+id/form_product_description"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_yield"
+        android:hint="Descrição"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="15dp"
+        android:text=""
+        android:textColor="@color/input_text"
+        android:textColorHint="#B9272727"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_product_make"
+        />
+
+    <Button
+        android:id="@+id/form_product_send"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_product_description"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:text="Entrar"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="20dp"
+        app:background="@drawable/login_btn"
+        app:backgroundTint="@color/blue"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

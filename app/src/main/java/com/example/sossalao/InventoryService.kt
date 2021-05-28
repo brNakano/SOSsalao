@@ -3,8 +3,10 @@ package com.example.sossalao
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.example.sossalao.HttpHelper.JSON
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.json.JSONObject
 
 object InventoryService {
 
@@ -14,13 +16,16 @@ object InventoryService {
 
     fun getInventory (context: Context): List<Inventory> {
             val url = "$host/api/stock/product"
-            val json = HttpHelper.get(url, token)
+            val json = HttpHelper.get(url, token, "API")
             return parserJson(json)
 
     }
 
+
     fun save(product: Inventory): Response {
-        val json = HttpHelper.post("$host/api/stock/product", product.toJson(), token)
+        val data = JSONObject(product.toString())
+        val json = HttpHelper.post("$host/api/stock/product", data.toString(), token, "API")
+        Log.d(TAG, data.toString())
         return parserJson(json)
     }
 

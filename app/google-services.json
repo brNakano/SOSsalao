@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517911597493",
+    "project_id": "sossalao-4ddc1",
+    "storage_bucket": "sossalao-4ddc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517911597493:android:aa56920683e577024789fc",
+        "android_client_info": {
+          "package_name": "com.example.sossalao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517911597493-97rmv7u7ra67edishufp2njeek7dnq1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUV3CPXYxk_JD6XJ_xxdPdPgfne15vA2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517911597493-97rmv7u7ra67edishufp2njeek7dnq1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
