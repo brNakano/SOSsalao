@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 object Prefs {
-    val PREF_ID = "LMS"
+    val PREF_ID = "SOS"
 
 
     private fun prefs(): SharedPreferences {
