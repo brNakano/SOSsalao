@@ -26,7 +26,7 @@ object InventoryService {
 
     fun save(product: Inventory): Response {
         val data = JSONObject(product.toString())
-        val json = HttpHelper.post("$host/api/stock/product", data.toString(), token, "API")
+        val json = HttpHelper.post("$host/api/stock/product", product.toJson(), token, "API")
         Log.d(TAG, data.toString())
         return parserJson(json)
     }

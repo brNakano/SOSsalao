@@ -64,6 +64,18 @@ object HttpHelper {
         return getJson(request)
     }
 
+    fun update(url: String, json: String, token: String): String {
+        Log.d(TAG, "HttpHelper.update: $url")
+        val body = RequestBody.create(JSON, json)
+        val request = Request.Builder()
+            .url(url)
+            .put(body)
+            .header("Authorization", "Bearer $token")
+            .addHeader("Content-Type", "application/json")
+            .build()
+        return getJson(request)
+    }
+
 
 
     private fun getJson(request: Request?): String {

@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/card_inventory"
+    android:id="@+id/card_people"
     android:layout_marginBottom="6dp"
     android:layout_marginTop="6dp"
     app:cardElevation="0dp"
@@ -21,14 +21,14 @@
         android:orientation="vertical">
         <TextView
             android:fontFamily="@font/roboto_bold"
-            android:id="@+id/product_name"
+            android:id="@+id/people_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/product_make"
+            android:id="@+id/people_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -36,13 +36,19 @@
             android:textSize="20sp"
             />
         <TextView
-            android:id="@+id/product_description"
+            android:id="@+id/people_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:textSize="18sp"/>
-
-
+        <TextView
+            android:id="@+id/people_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"/>
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

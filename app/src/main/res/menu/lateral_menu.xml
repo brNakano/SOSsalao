@@ -6,17 +6,11 @@
             android:title="Agenda"
             android:checked="true" />
         <item
-            android:id="@+id/nav_products"
-            android:title="Produtos" />
+            android:id="@+id/nav_employee"
+            android:title="Funcionários" />
         <item
-            android:id="@+id/nav_people"
-            android:title="Pessoas" />
-        <item
-            android:id="@+id/nav_procedures"
-            android:title="Serviços" />
-        <item
-            android:id="@+id/nav_config"
-            android:title="Configurações" />
+            android:id="@+id/nav_client"
+            android:title="Clientes" />
         <item android:id="@+id/nav_logout"
             android:title="Sair"/>
     </group>

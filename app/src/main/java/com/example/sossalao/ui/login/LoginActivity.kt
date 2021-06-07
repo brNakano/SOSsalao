@@ -10,7 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
 import com.example.sossalao.ui.InventoryActivity
+import com.example.sossalao.ui.schedule.Schedule
+import com.example.sossalao.ui.schedule.ScheduleActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 import java.io.*
 import java.net.HttpURLConnection
@@ -29,24 +35,36 @@ class LoginActivity : AppCompatActivity() {
             }
             false
         })
-        loginBtn.setOnClickListener {onClickLogin() }
-        change_password.setOnClickListener { onChangePassword() }
+
+        dev_pass()
+/*        loginBtn.setOnClickListener {onClickLogin() }
+        change_password.setOnClickListener { onChangePassword() }*/
+    }
+
+    fun dev_pass(){
+        val intent = Intent(this, ScheduleActivity::class.java)
+        loginAuthenticator("aluno", "impacta")
+        startActivity(intent)
     }
 
     private fun onClickLogin(){
-        val intent = Intent(this, InventoryActivity::class.java)
+        val intent = Intent(this, ScheduleActivity::class.java)
         val login = username.text.toString()
         val passwordCheck = password.text.toString()
         if (login.length > 3 && passwordCheck.length > 3) {
-            val getToken = loginAuthenticator(login, passwordCheck)
-            if (getToken.length > 500) {
-                // Limpar campos
-                username.setText("")
-                password.setText("")
-
+            if (loginAuthenticator(login, passwordCheck)) {
                 Toast.makeText(this, "Bem-vindo", Toast.LENGTH_SHORT).show()
-                Prefs.setString("API_TOKEN", getToken)
                 startActivity(intent)
+
+                // esconde a ação de limpar os campos
+                GlobalScope.launch(context = Dispatchers.Main) {
+                    delay(1000)
+                    // Limpar campos do login após entrar
+                    username.setText("")
+                    password.setText("")
+                }
+
+
             } else {
                 Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show()
             }
@@ -55,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun loginAuthenticator(userName: String, password: String?): String {
+    fun loginAuthenticator(userName: String, password: String?): Boolean {
         val serverURL: String = "http://3.93.42.204:32770/api/auth"
         val url = URL(serverURL)
         var token = ""
@@ -84,9 +102,10 @@ class LoginActivity : AppCompatActivity() {
                 val obj = JSONObject(response.toString())
                 obj.getString("accessToken").also { token = it }
             }
-            return token
+            Prefs.setString("API_TOKEN", token)
+            return true
         }
-        return "Falha ao autenticar: "+connection.responseCode
+        return false
     }
     private fun onChangePassword(){
         Toast.makeText(this, "Não é possivel trocar de senha", Toast.LENGTH_SHORT).show()

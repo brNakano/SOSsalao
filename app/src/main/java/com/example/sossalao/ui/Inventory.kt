@@ -3,6 +3,7 @@ package com.example.sossalao.ui
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.GsonBuilder
+import java.io.FileDescriptor
 import java.io.Serializable
 
 @Entity(tableName = "inventory")
@@ -19,6 +20,13 @@ class Inventory : Serializable {
     }
 
     fun toJson(): String {
-        return GsonBuilder().create().toJson(this)
+        val invetory = PostInventory(
+            name = this.name,
+            make = this.make,
+            description = this.description
+        )
+        return GsonBuilder().create().toJson(invetory)
     }
 }
+
+data class PostInventory(val name: String, val make: String, val description: String)

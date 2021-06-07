@@ -16,38 +16,43 @@ import com.example.sossalao.*
 import com.example.sossalao.repository.service.InventoryService
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_inventory.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.lateral_menu_header.view.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-open class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    val context: Context get() = this
+class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var inventoryList = listOf<Inventory>()
     private var REQUEST_REMOVE= 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventory)
+
         Log.i("Informacao: ", { Prefs.getString("API_TOKEN") }.toString())
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Produtos"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        configMenu()
+/*        configMenu()
 
         recyclerInventory?.layoutManager = LinearLayoutManager(context)
         recyclerInventory?.itemAnimator = DefaultItemAnimator()
-        recyclerInventory?.setHasFixedSize(true)
+        recyclerInventory?.setHasFixedSize(true)*/
 
 
     }
 
-    override fun onResume() {
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
+    }
+
+/*    override fun onResume() {
         super.onResume()
         taskInventory()
-    }
+    }*/
 
-    fun taskInventory() {
+/*    fun taskInventory() {
         Thread {
             this.inventoryList = InventoryService.getInventory(context)
             runOnUiThread {
@@ -56,21 +61,21 @@ open class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationI
             }
         }.start()
 
-    }
+    }*/
 
-    fun onClickInventory(inventory: Inventory) {
+/*    fun onClickInventory(inventory: Inventory) {
         val intent = Intent(context, ProductDetailActivity::class.java)
         intent.putExtra("inventory", inventory)
         startActivityForResult(intent, REQUEST_REMOVE)
     }
 
-/*    private fun loading(){
+*//*    private fun loading(){
         GlobalScope.launch(context = Dispatchers.Main) {
             progressBar.visibility = View.VISIBLE
             delay(10000)
             progressBar.visibility = View.GONE
         }
-    }*/
+    }*//*
 
     private fun configMenu() {
 
@@ -146,5 +151,5 @@ open class InventoryActivity : AppCompatActivity(), NavigationView.OnNavigationI
         }
 
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 }
