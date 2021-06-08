@@ -31,6 +31,16 @@ class People : Serializable {
         return GsonBuilder().create().toJson(this)
     }
 
+    fun getType(): String {
+        if (this.typePeople == 0){
+            return "Cliente"
+        }
+        if (this.typePeople == 1){
+            return "Funcionário"
+        }
+        return "type"
+    }
+
 }
 
 data class PostPeople(

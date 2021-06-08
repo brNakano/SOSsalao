@@ -14,10 +14,7 @@ import com.example.sossalao.Prefs
 import com.example.sossalao.R
 import com.example.sossalao.ui.FormInventoryActivity
 import com.example.sossalao.ui.ProductDetailActivity
-import com.example.sossalao.ui.people.FormPeopleActivity
-import com.example.sossalao.ui.people.People
-import com.example.sossalao.ui.people.PeopleAdapter
-import com.example.sossalao.ui.people.PeopleService
+import com.example.sossalao.ui.people.*
 import kotlinx.android.synthetic.main.activity_client.*
 import kotlinx.android.synthetic.main.activity_employee.*
 import kotlinx.android.synthetic.main.activity_employee.recyclerEmployee
@@ -57,6 +54,7 @@ class ClientActivity : AppCompatActivity() {
     fun taskSchedule() {
         Thread {
             val peopleList = PeopleService.getPeople(context)
+            this.clientList = listOf<People>()
             for (people in peopleList) {
                 if (people.typePeople == 0){
                     this.clientList += people
@@ -71,8 +69,8 @@ class ClientActivity : AppCompatActivity() {
     }
 
     fun onClickClient(people: People) {
-        val intent = Intent(context, ProductDetailActivity::class.java)
-        intent.putExtra("schedule", people)
+        val intent = Intent(context, PeopleDetailActivity::class.java)
+        intent.putExtra("people", people)
         startActivityForResult(intent, REQUEST_REMOVE)
     }
 
@@ -93,6 +91,7 @@ class ClientActivity : AppCompatActivity() {
             R.id.action_add -> {
                 intent = Intent(this, FormPeopleActivity::class.java)
                 intent.putExtra("view", "Cliente")
+                intent.putExtra("mode", "post")
                 startActivity(intent)
             }
             R.id.action_config -> {

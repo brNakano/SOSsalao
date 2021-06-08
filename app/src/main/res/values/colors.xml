@@ -12,4 +12,7 @@
     <color name="blue">#b4defd</color>
     <color name="gray">#8A8A8A</color>
     <color name="background">#fffeff</color>
+    <color name="gray_black">#292929</color>
+    <color name="delete">#ff0000</color>
+    <color name="edit">#019ade</color>
 </resources>

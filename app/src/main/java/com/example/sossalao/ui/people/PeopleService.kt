@@ -5,7 +5,6 @@ import android.util.Log
 import com.example.sossalao.Prefs
 import com.example.sossalao.repository.HttpHelper
 import com.example.sossalao.repository.Response
-import com.example.sossalao.ui.schedule.Schedule
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -23,7 +22,7 @@ object PeopleService {
     }
 
     fun getPeopleById(context: Context, id: Int): People {
-        val url = "$host/api/people$id"
+        val url = "$host/api/people/$id"
         val json = HttpHelper.get(url, token, "API")
 
         return parserJson(json)
@@ -38,15 +37,15 @@ object PeopleService {
 
     fun delete(people: People): Response {
         Log.d(TAG, people.idPeople.toString())
-        val url = "$host/api/people${people.idPeople}"
+        val url = "$host/api/people/${people.idPeople}"
         val json = HttpHelper.delete(url, token)
         Log.d(TAG, json)
         return parserJson(json)
     }
 
     fun update(people: People): Response {
-        val url = "$host/api/people${people.idPeople}"
-        val json = HttpHelper.update("$host/api/scheduling", people.toJson(), token)
+        val url = "$host/api/people/${people.idPeople}"
+        val json = HttpHelper.update(url, people.toJson(), token)
 
         Log.d(TAG, json)
         return  parserJson(json)

@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOSsalao"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.people.FormPeopleActivity"
+        <activity android:name=".ui.people.PeopleDetailActivity"
             android:theme="@style/SOSsalao.Home"></activity>
+        <activity
+            android:name=".ui.people.FormPeopleActivity"
+            android:theme="@style/SOSsalao.Home" />
         <activity
             android:name=".ui.people.client.ClientActivity"
             android:theme="@style/SOSsalao.Home" />

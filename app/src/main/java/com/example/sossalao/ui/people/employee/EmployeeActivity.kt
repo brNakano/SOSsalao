@@ -12,12 +12,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
-import com.example.sossalao.ui.FormInventoryActivity
-import com.example.sossalao.ui.ProductDetailActivity
-import com.example.sossalao.ui.people.FormPeopleActivity
-import com.example.sossalao.ui.people.People
-import com.example.sossalao.ui.people.PeopleAdapter
-import com.example.sossalao.ui.people.PeopleService
+import com.example.sossalao.ui.people.*
 
 import kotlinx.android.synthetic.main.activity_employee.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -56,6 +51,7 @@ class EmployeeActivity : AppCompatActivity() {
     fun taskSchedule() {
         Thread {
             val peopleList = PeopleService.getPeople(context)
+            this.employeeList = listOf<People>()
             for (people in peopleList) {
                 if (people.typePeople == 1){
                     this.employeeList += people
@@ -70,8 +66,8 @@ class EmployeeActivity : AppCompatActivity() {
     }
 
     fun onClickEmployee(people: People) {
-        val intent = Intent(context, ProductDetailActivity::class.java)
-        intent.putExtra("schedule", people)
+        val intent = Intent(context, PeopleDetailActivity::class.java)
+        intent.putExtra("people", people)
         startActivityForResult(intent, REQUEST_REMOVE)
     }
 
@@ -101,6 +97,7 @@ class EmployeeActivity : AppCompatActivity() {
             R.id.action_add -> {
                 intent = Intent(this, FormPeopleActivity::class.java)
                 intent.putExtra("view", "Funcionário")
+                intent.putExtra("mode", "post")
                 startActivity(intent)
             }
             R.id.action_config -> {

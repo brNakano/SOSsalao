@@ -17,14 +17,12 @@ class PeopleAdapter (
         val peopleName: TextView
         val peoplePhone: TextView
         val peopleEmail: TextView
-        val peopleType: TextView
         var cardView: CardView
 
         init {
             peopleName = view.findViewById<TextView>(R.id.people_name)
             peoplePhone = view.findViewById<TextView>(R.id.people_phone)
             peopleEmail = view.findViewById<TextView>(R.id.people_email)
-            peopleType = view.findViewById<TextView>(R.id.people_type)
             cardView = view.findViewById<CardView>(R.id.card_people)
 
         }
@@ -56,7 +54,6 @@ class PeopleAdapter (
         holder.peopleName.text = "Nome: ${people.name}"
         holder.peopleEmail.text = "Email: ${people.email}"
         holder.peoplePhone.text = "Telefone: ${people.phoneNumber}"
-        holder.peopleType.text = "Tipo: ${people.typePeople}"
 
 
 
