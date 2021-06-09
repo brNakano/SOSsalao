@@ -6,6 +6,10 @@ import android.util.Log
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
 import com.example.sossalao.ui.ProductDetailActivity
+import com.example.sossalao.ui.people.PeopleDetailActivity
+import com.example.sossalao.ui.schedule.ScheduleDate
+import com.example.sossalao.ui.schedule.ScheduleDetailActivity
+import com.example.sossalao.ui.schedule.ScheduleService
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -44,6 +48,28 @@ class MyFirebaseMessagingService: FirebaseMessagingService(){
 
         val titulo = mensagemRemota?.notification?.title?: getString(R.string.app_name)
         var mensagem = mensagemRemota?.notification?.body!!
+
+        if(mensagemRemota?.data.isNotEmpty()) {
+            val activity = mensagemRemota.data.get("activity").toString()
+            if (activity == "schedule"){
+                val intent = Intent(context, ScheduleDetailActivity::class.java)
+                val scheduleId = mensagemRemota.data.get("scheduleId").toString()
+                val schedule = ScheduleService.getScheduleById(context, scheduleId.toInt())
+                intent.putExtra("schedule", schedule)
+            }
+            if (activity == "employee"){
+                val intent = Intent(context, PeopleDetailActivity::class.java)
+                val clientId = mensagemRemota.data.get("clientId").toString()
+                val people = ScheduleService.getScheduleById(context, clientId.toInt())
+                intent.putExtra("people", people)
+            }
+            if (activity == "client"){
+                val intent = Intent(context, PeopleDetailActivity::class.java)
+                val employeeId = mensagemRemota.data.get("employeeId").toString()
+                val people = ScheduleService.getScheduleById(context, employeeId.toInt())
+                intent.putExtra("people", people)
+            }
+        }
 
 
         NotificationUtil.create(1, intent, titulo, mensagem)

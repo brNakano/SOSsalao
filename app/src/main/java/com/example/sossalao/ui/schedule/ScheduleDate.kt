@@ -3,10 +3,13 @@ package com.example.sossalao.ui.schedule
 import java.time.LocalDateTime
 
 object ScheduleDate {
-    fun dayNum(date: String?): Int {
+    fun dayNum(date: String?): String {
         val dateTime = LocalDateTime.parse(date)
+        if(dateTime.dayOfMonth.toString().length < "00".length){
+            return "0${dateTime.dayOfMonth}"
+        }
 
-        return dateTime.dayOfMonth
+        return dateTime.dayOfMonth.toString()
     }
 
     fun dayWeek(date: String?): String {

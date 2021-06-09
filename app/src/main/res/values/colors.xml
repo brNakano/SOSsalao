@@ -19,4 +19,5 @@
     <color name="adiado">#efb14e</color>
     <color name="cancelado">#eb5160</color>
     <color name="atendido">#008ec9</color>
+    <color name="text_color">#515f61</color>
 </resources>

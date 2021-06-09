@@ -57,6 +57,7 @@ class EmployeeActivity : AppCompatActivity() {
                     this.employeeList += people
                 }
             }
+            this.employeeList = this.employeeList.sortedByDescending { it.idPeople }
             runOnUiThread {
 
                 recyclerEmployee?.adapter = PeopleAdapter(this.employeeList) { onClickEmployee(it) }

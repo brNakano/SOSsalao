@@ -32,7 +32,7 @@ class FormScheduleActivity : AppCompatActivity() {
                 schedulePut = intent.getSerializableExtra("schedule") as Schedule
             supportActionBar?.title = "Editar Agendamento"
 
-            form_schedule_day.editText?.setText(ScheduleDate.dayNum(schedulePut?.checkIn).toString())
+            form_schedule_day.editText?.setText(ScheduleDate.dayNum(schedulePut?.checkIn))
             form_schedule_month.editText?.setText(ScheduleDate.monthValue(schedulePut?.checkIn))
             form_schedule_year.editText?.setText(ScheduleDate.year(schedulePut?.checkIn).toString())
             form_schedule_hour.editText?.setText(ScheduleDate.hour(schedulePut?.checkIn).toString())

@@ -6,42 +6,72 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/card_people"
-    android:layout_marginBottom="6dp"
-    android:layout_marginTop="6dp"
     app:cardElevation="0dp"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="false"
     card_view:cardCornerRadius="0dp"
     card_view:cardElevation="0dp"
+    android:background="@drawable/status_background"
     android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:fontFamily="@font/roboto_bold"
-            android:id="@+id/people_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:textSize="20sp" />
-        <TextView
-            android:id="@+id/people_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:textSize="20sp"
-            />
-        <TextView
-            android:id="@+id/people_email"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/status_background">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:textSize="18sp"/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:background="@drawable/circle"
+                        android:src="@drawable/ic_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <TextView
+                    android:fontFamily="@font/roboto_bold"
+                    android:id="@+id/people_name"
+                    android:textColor="#26314f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="Nome"
+                    android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/people_phone"
+                    android:textColor="@color/text_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11912345789"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
+
+
 
 </androidx.cardview.widget.CardView>

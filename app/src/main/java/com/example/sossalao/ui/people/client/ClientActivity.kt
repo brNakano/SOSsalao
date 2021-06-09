@@ -56,6 +56,7 @@ class ClientActivity : AppCompatActivity() {
                     this.clientList += people
                 }
             }
+            this.clientList = this.clientList.sortedByDescending { it.idPeople }
             runOnUiThread {
 
                 recyclerClient?.adapter = PeopleAdapter(this.clientList) { onClickClient(it) }

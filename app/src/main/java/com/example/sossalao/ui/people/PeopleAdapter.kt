@@ -16,13 +16,11 @@ class PeopleAdapter (
     class PeopleViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val peopleName: TextView
         val peoplePhone: TextView
-        val peopleEmail: TextView
         var cardView: CardView
 
         init {
             peopleName = view.findViewById<TextView>(R.id.people_name)
             peoplePhone = view.findViewById<TextView>(R.id.people_phone)
-            peopleEmail = view.findViewById<TextView>(R.id.people_email)
             cardView = view.findViewById<CardView>(R.id.card_people)
 
         }
@@ -51,9 +49,8 @@ class PeopleAdapter (
 
         val people = peopleList[position]
 
-        holder.peopleName.text = "Nome: ${people.name}"
-        holder.peopleEmail.text = "Email: ${people.email}"
-        holder.peoplePhone.text = "Telefone: ${people.phoneNumber}"
+        holder.peopleName.text = "${people.name}"
+        holder.peoplePhone.text = "${people.phoneNumber}"
 
 
 
