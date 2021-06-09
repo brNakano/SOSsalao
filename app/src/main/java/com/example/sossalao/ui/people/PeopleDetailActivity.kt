@@ -66,11 +66,6 @@ class PeopleDetailActivity : AppCompatActivity() {
         return true;
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.detail_menu, menu)
-        return true
-    }
-
     fun onClickEdit(people: People?) {
         intent = Intent(context, FormPeopleActivity::class.java)
         intent.putExtra("people", people)

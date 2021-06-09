@@ -4,11 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
-import com.example.sossalao.repository.service.InventoryService
-import com.example.sossalao.ui.Inventory
-import kotlinx.android.synthetic.main.activity_form_inventory.*
 import kotlinx.android.synthetic.main.activity_form_people.*
-import kotlinx.android.synthetic.main.adapter_people.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class FormPeopleActivity : AppCompatActivity() {

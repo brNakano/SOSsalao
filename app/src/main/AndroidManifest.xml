@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOSsalao"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.schedule.ScheduleDetailActivity"></activity>
+        <activity android:name=".ui.schedule.ScheduleDetailActivity"
+            android:theme="@style/SOSsalao.Home"></activity>
         <activity
             android:name=".ui.schedule.FormScheduleActivity"
             android:theme="@style/SOSsalao.Home" />

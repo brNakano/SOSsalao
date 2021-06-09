@@ -22,8 +22,11 @@ object ScheduleDate {
 
     fun monthValue(date: String?): String {
         val dateTime = LocalDateTime.parse(date)
+        if(dateTime.monthValue.toString().length < "00".length){
+            return "0${dateTime.monthValue}"
+        }
 
-        return toPortugueseMonth(dateTime.monthValue.toString())
+        return dateTime.monthValue.toString()
     }
 
     fun year(date: String?): Int {

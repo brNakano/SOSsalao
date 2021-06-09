@@ -9,8 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
-import com.example.sossalao.ui.InventoryActivity
-import com.example.sossalao.ui.schedule.Schedule
 import com.example.sossalao.ui.schedule.ScheduleActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.Dispatchers

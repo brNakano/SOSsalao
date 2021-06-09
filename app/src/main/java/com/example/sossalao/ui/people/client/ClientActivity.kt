@@ -12,12 +12,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
-import com.example.sossalao.ui.FormInventoryActivity
-import com.example.sossalao.ui.ProductDetailActivity
 import com.example.sossalao.ui.people.*
 import kotlinx.android.synthetic.main.activity_client.*
-import kotlinx.android.synthetic.main.activity_employee.*
-import kotlinx.android.synthetic.main.activity_employee.recyclerEmployee
 import kotlinx.android.synthetic.main.toolbar.*
 
 class ClientActivity : AppCompatActivity() {

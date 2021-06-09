@@ -1,6 +1,5 @@
 package com.example.sossalao
 
-import android.content.Context
 import android.content.SharedPreferences
 
 object Prefs {

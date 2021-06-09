@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scaleX="-1"
     tools:context=".ui.schedule.ScheduleDetailActivity">
 
-    <include layout="@layout/toolbar" />
+    <include
+        android:id="@+id/include4"
+        layout="@layout/toolbar" />
 
     <ImageView
         android:id="@+id/schedule_icon"
@@ -20,5 +21,126 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/detail_status_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="20dp"
+        android:text="Adiado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schedule_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/button_panel"
+        app:layout_constraintTop_toBottomOf="@id/detail_status_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/divider_detail"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="50dp"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/detail_schedule_edit"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textTop"
+                android:layout_height="match_parent"
+                android:text="Editar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/detail_schedule_delete"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                app:icon="@drawable/ic_action_delete"
+                app:iconGravity="textTop"
+                android:layout_height="match_parent"
+                android:text="Excluir" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_panel">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20dp"
+            android:text="Horário"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/detail_date"
+            android:textSize="18dp"
+            android:text="28 de junho de 2021"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20dp"
+            android:text="Cliente"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/detail_employee"
+            android:textSize="18dp"
+            android:text="Agatha"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20dp"
+            android:text="Funcionário"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/detail_client"
+            android:textSize="18dp"
+            android:text="Maria"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

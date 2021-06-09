@@ -69,7 +69,7 @@ class ScheduleAdapter (
             val employee = PeopleService.getPeopleById(context, schedule.employeeId)
 
             val dateTime = "${ScheduleDate.hour(schedule.checkIn)}:${ScheduleDate.minute(schedule.checkIn)}"
-            val fullDateTime = "${ScheduleDate.dayNum(schedule.checkIn)}, ${ScheduleDate.month(schedule.checkIn)} de ${ScheduleDate.year(schedule.checkIn)}"
+            val fullDateTime = "${ScheduleDate.dayNum(schedule.checkIn)} de ${ScheduleDate.month(schedule.checkIn)} de ${ScheduleDate.year(schedule.checkIn)}"
             holder.scheduleDayNum.text = ScheduleDate.dayNum(schedule.checkIn).toString()
             holder.scheduleDayWeek.text = ScheduleDate.dayWeek(schedule.checkIn)
             holder.fullDate.text = fullDateTime

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sossalao.Prefs
 import com.example.sossalao.R
-import com.example.sossalao.ui.*
 import com.example.sossalao.ui.people.client.ClientActivity
 import com.example.sossalao.ui.people.employee.EmployeeActivity
 import com.google.android.material.navigation.NavigationView
@@ -64,7 +63,7 @@ class ScheduleActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     }
 
     fun onClickSchedule(schedule: Schedule) {
-        val intent = Intent(context, ProductDetailActivity::class.java)
+        val intent = Intent(context, ScheduleDetailActivity::class.java)
         intent.putExtra("schedule", schedule)
         startActivityForResult(intent, REQUEST_REMOVE)
     }

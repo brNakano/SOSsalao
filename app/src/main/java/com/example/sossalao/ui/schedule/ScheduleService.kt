@@ -49,7 +49,7 @@ object ScheduleService {
 
     fun update(schedule: Schedule):Response{
         val url = "$host/api/scheduling/${schedule.idScheduling}"
-        val json = HttpHelper.update("$host/api/scheduling", schedule.toJson(), token)
+        val json = HttpHelper.update(url, schedule.toJson(), token)
 
         Log.d(TAG, json)
         return  parserJson(json)
