@@ -34,9 +34,8 @@ class LoginActivity : AppCompatActivity() {
             false
         })
 
-        dev_pass()
-/*        loginBtn.setOnClickListener {onClickLogin() }
-        change_password.setOnClickListener { onChangePassword() }*/
+        loginBtn.setOnClickListener {onClickLogin() }
+        change_password.setOnClickListener { onChangePassword() }
     }
 
     fun dev_pass(){

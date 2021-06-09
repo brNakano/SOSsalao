@@ -55,9 +55,7 @@ class ScheduleActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         Thread {
             this.scheduleList = ScheduleService.getSchedule(context)
             this.scheduleList = this.scheduleList.sortedByDescending { it.idScheduling }
-            Log.d("listSort", this.scheduleList.map { it.idScheduling }.toString())
             runOnUiThread {
-
                 recyclerSchedule?.adapter = ScheduleAdapter(this.scheduleList) { onClickSchedule(it) }
             }
         }.start()

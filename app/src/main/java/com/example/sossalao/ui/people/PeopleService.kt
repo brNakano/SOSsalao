@@ -15,6 +15,7 @@ object PeopleService {
     val TAG = "PeopleService"
     val token = Prefs.getString("API_TOKEN").toString()
 
+
     fun getPeople (context: Context): List<People> {
         val url = "$host/api/people"
         val json = HttpHelper.get(url, token, "API")
@@ -50,6 +51,15 @@ object PeopleService {
 
         Log.d(TAG, json)
         return  parserJson(json)
+    }
+
+    fun pushCreate(context: Context){
+        val fireBaseHost = "http://fcm.googleapis.com/fcm/send"
+        val fToken = Prefs.getString("FB_TOKEN")
+        val key = Prefs.getString("KEY_SERVER")
+        val people = getPeople(context)
+        val lastPeople = people[0]
+        val data = "{\"to\": $token, \"notification\": {\"title\":\"Pessoa Criada\", \"body\": \"Nome: ${lastPeople.name}\"}}"
     }
 
     inline fun <reified T> parserJson(json: String): T {
